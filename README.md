@@ -10,3 +10,5 @@
 	- export SCALA_HOME="$SEARCH_PROJECT_DIR/scala-2.12.6"
 	- export PATH=$PATH:$SCALA_HOME/bin
   - 4 source ~/.bash_profile
+  
+### Var vs Val
