@@ -12,8 +12,8 @@
   - 4 source ~/.bash_profile
   
 ### Singleton Objects
-  - Most often, you need an object to hold methods and values/variables that shall be available without having to first instantiate an instance of some class.
   - A singleton is a class that can have only one instance, i.e., Object.
+  - Most often, you need an object to hold methods and values/variables that shall be available without having to first instantiate an instance of some class.
   - Since you can't instantiate a singleton object, you can't pass parameters to the primary constructor.
   
 Note:
@@ -32,11 +32,41 @@ a.twice(2)
 object A {
   def twice(i: Int): Int = 2*i
 }
+
+A.twice(2)
 ``` 
-### Var vs Val
+
+### object A extends B with C
+
+  - You can also use the object itself as some special instance of a class or trait. When you do this, your object needs to extend some trait in order to become an instance of a subclass of it.
+
+  - Consider the following code:
+
+```scala
+object A extends B with C {
+  ...
+}
+```
+
+  - This declaration first declares an anonymous (inaccessible) class that extends both B and C, and instantiates a single instance of this class named A.
+
+  - This means A can be passed to functions expecting objects of type B or C, or B with C.
+
+
+### trait
+  - A trait encapsulates method and field definitions, which can then be reused by mixing them into classes.
+  - Unlike class inheritance, in which each class must inherit from just one superclass, a class can mix in any number of traits.
+
+### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
   - Method parameters are always immutable which are defined by val keyword.
   - Local variables can be both mutable and immutable types and can be defined using either var or val.
+  
+### final
+  - final members cannot be overridden.
+  
+### lazy val
+  - The difference between them is, that a val is executed when it is defined whereas a lazy val is executed when it is accessed the first time.
  
 ### Unit Return
   - Scala is an expression oriented language, every function returns some result. If no explicit return expression is given, the value (), which is pronounced “unit”, is assumed.
