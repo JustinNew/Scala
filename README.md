@@ -63,6 +63,15 @@ object A extends B with C {
 ### trait
   - A trait encapsulates method and field definitions, which can then be reused by mixing them into classes.
   - Unlike class inheritance, in which each class must inherit from just one superclass, a class can mix in any number of traits.
+  - If you wish to mix a trait into a class that explicitly extends a superclass, you use extends to indicate the superclass and with to mix in the trait.
+
+```scala
+    class Animal
+  
+    class Frog extends Animal with Philosophical {
+      override def toString = "green"
+    }
+```
 
 ### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
