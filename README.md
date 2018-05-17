@@ -73,6 +73,14 @@ object A extends B with C {
     }
 ```
 
+  - Declare a trait with extend
+```scala
+    trait Doubling extends IntQueue {
+      abstract override def put(x: Int) = { super.put(2 * x) }
+    }
+```
+  - This declaration means that the trait can only be mixed into a class that also extends IntQueue.
+
 ### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
   - Method parameters are always immutable which are defined by val keyword.
@@ -99,6 +107,9 @@ object A extends B with C {
   
 ### Case Classes
   - Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
+
+### pattern match
+  - Whenever you write a pattern match, you need to make sure you have covered all of the possible cases.
   
 ### self type
   - what is the difference between a self type and extending a trait, that is simple. If you say B extends A, then B is an A. When you use self-types, B requires an A.
@@ -127,3 +138,6 @@ object FooMain {
   }
 }
 ```
+
+### Seq vs List
+  - In Java terms, Scala's Seq would be Java's List, and Scala's List would be Java's LinkedList.
