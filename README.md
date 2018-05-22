@@ -21,6 +21,7 @@
 
 ### Singleton Objects
   - A singleton is a class that can have only one instance, i.e., Object.
+  - In particular, a singleton object is initialized the first time some code accesses it.
   - Most often, you need an object to hold methods and values/variables that shall be available without having to first instantiate an instance of some class.
   - Since you can't instantiate a singleton object, you can't pass parameters to the primary constructor.
   - When a singleton object shares the same name with a class, it is called that class's companion object. You must define both the class and its companion object in the same source file.
@@ -47,6 +48,12 @@ object A {
 A.twice(2)
 ``` 
 
+#### companion object
+  - The companion object basically provides a place where one can put "static-like" methods. Furthermore, a companion object, or companion module, has full access to the class members, including private ones.
+  - Companion objects are great for encapsulating things like factory methods.
+  - A class and its companion object can access each other's private members.
+  - Given just a definition of object ChecksumAccumulator, you can't make a variable of type ChecksumAccumulator. Rather, the type named ChecksumAccumulator is defined by the singleton object's companion class.
+
 ### object A extends B with C
 
   - You can also use the object itself as some special instance of a class or trait. When you do this, your object needs to extend some trait in order to become an instance of a subclass of it.
@@ -68,6 +75,8 @@ object A extends B with C {
   - A trait encapsulates method and field definitions, which can then be reused by mixing them into classes.
   - Unlike class inheritance, in which each class must inherit from just one superclass, a class can mix in any number of traits.
   - If you wish to mix a trait into a class that explicitly extends a superclass, you use extends to indicate the superclass and with to mix in the trait.
+  - A trait also defines a type. A trait can be used as a type.
+  - Traits can declare fields and maintain state.
 
 ```scala
     class Animal
@@ -84,6 +93,17 @@ object A extends B with C {
     }
 ```
   - This declaration means that the trait can only be mixed into a class that also extends IntQueue.
+  
+#### Linearization
+  - When you instantiate a class with new, Scala takes the class, and all of its inherited classes and traits, and puts them in a single, linear order.
+
+### package
+  - You can place the contents of an entire file into a package by putting a package clause at the top of the file.
+ 
+```scala
+   package com.bobsrockets.navigation
+   class Navigator
+```
 
 ### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
