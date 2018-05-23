@@ -105,6 +105,12 @@ object A extends B with C {
    class Navigator
 ```
 
+### Package Object
+  - Any kind of definition that you can put inside a class can also be at the top level of a package.
+  - To do so, put the definitions in a package object.
+  - Each package is allowed to have one package object.  
+  - Anydefinitions placed in a package object are considered members of thepackage itself.
+  
 ### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
   - Method parameters are always immutable which are defined by val keyword.
@@ -115,8 +121,12 @@ object A extends B with C {
   
 ### lazy val
   - The difference between them is, that a val is executed when it is defined whereas a lazy val is executed when it is accessed the first time.
+  - If you prefix a val definition with a lazy modifier, the initializing expression on the right-hand side will only be evaluated the first time the val is used.
+  - Lazy vals can free you as a programmer from having to think hard how to arrange val definitions to ensure that everything is defined when it is needed.
  
-### private
+### Access Modifier
+#### private
+  - A member labeledprivate is visible only inside the class orobject that contains the member definition.
   - Private fields can only be accessed by methods defined in the same class, all the code that can update the state will be localized to the class.
   - The way you make members public in Scala is by not explicitly specifying any access modifier. Public is Scala's default access level.
   
@@ -126,6 +136,15 @@ object A extends B with C {
   }
 ```
 
+#### protected
+  - In Scala, a protected member is only accessible from subclasses ofthe class in which the member is defined.
+  - A modifierof the form private[X] or protected[X] means that access is private or protected "up to" X, where X designates some enclosing package, class or singleton object.
+
+### Abstract Members
+  - A member of a class or trait is abstract if the member does not have a complete definition in the class. 
+  - Abstract members are intended to be implemented in subclasses of the class in which they are declared.
+  - Besides methods, you can declare abstract fields and even abstract types as members of classes and traits.
+  
 ### Unit Return
   - Scala is an expression oriented language, every function returns some result. If no explicit return expression is given, the value (), which is pronounced “unit”, is assumed.
   
