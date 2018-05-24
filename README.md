@@ -15,12 +15,17 @@
   - Setup Java SDK, Scala SDK, gradle
   - import gradle.build 
   
+### Name Convention
+  - Classes should be named in upper camel case, class MyFairLady.
+  - Textual (alphabetic) names for methods should be in lower camel case, myFairMethod.
+  - Constant names should be in upper camel case.
+
 ### Scala Application Enter Point
   - To run a Scala program, you must supply the name of a standalone singleton object with a main method that takes one parameter, an Array[String], and has a result type of Unit.
   - Any standalone object with a main method of the proper signature can be used as the entry point into an application.
 
 ### Singleton Objects
-  - A singleton is a class that can have only one instance, i.e., Object.
+  - A singleton is a class that can have only one instancei.e., Object, and only one at a time. 
   - In particular, a singleton object is initialized the first time some code accesses it.
   - Most often, you need an object to hold methods and values/variables that shall be available without having to first instantiate an instance of some class.
   - Since you can't instantiate a singleton object, you can't pass parameters to the primary constructor.
@@ -109,7 +114,7 @@ object A extends B with C {
   - Any kind of definition that you can put inside a class can also be at the top level of a package.
   - To do so, put the definitions in a package object.
   - Each package is allowed to have one package object.  
-  - Anydefinitions placed in a package object are considered members of thepackage itself.
+  - Any definitions placed in a package object are considered members of the package itself.
   
 ### var vs val
   - Object fields can be both mutable and immutable types and can be defined using either var or val.
@@ -126,7 +131,7 @@ object A extends B with C {
  
 ### Access Modifier
 #### private
-  - A member labeledprivate is visible only inside the class orobject that contains the member definition.
+  - A member labeled private is visible only inside the class orobject that contains the member definition.
   - Private fields can only be accessed by methods defined in the same class, all the code that can update the state will be localized to the class.
   - The way you make members public in Scala is by not explicitly specifying any access modifier. Public is Scala's default access level.
   
@@ -137,7 +142,7 @@ object A extends B with C {
 ```
 
 #### protected
-  - In Scala, a protected member is only accessible from subclasses ofthe class in which the member is defined.
+  - In Scala, a protected member is only accessible from subclasses of the class in which the member is defined.
   - A modifierof the form private[X] or protected[X] means that access is private or protected "up to" X, where X designates some enclosing package, class or singleton object.
 
 ### Abstract Members
