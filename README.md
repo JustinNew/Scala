@@ -162,6 +162,17 @@ What comes with case classes:
   - A companion object containing:
     - An apply() constructor based on the class constructor
     - An extractor based on constructor fields
+	
+More about case classes:
+  - If you are going to write purely functional code with immutable objects, you should better try avoid using regular classes. The main idea of the functional paradigm is the separation of data structures and operations on them. Case Classes are a representation of a data structure with the necessary methods. Functions on the data should be described in different software entities (e.g., traits, objects).
+
+  - Regular classes, on the contrary, link data and operations to provide the mutability. This approach is closer to the object-oriented paradigm.
+
+  - As a result, do not use Case Classes if:
+
+    - Your class carries mutable state.
+    - Your class includes some logic.
+    - Your class is not a data representation and you do not require structural equality.
 
 ### pattern match
   - Whenever you write a pattern match, you need to make sure you have covered all of the possible cases.
