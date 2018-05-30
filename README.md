@@ -154,7 +154,11 @@ object A extends B with C {
   - Scala is an expression oriented language, every function returns some result. If no explicit return expression is given, the value (), which is pronounced “unit”, is assumed.
   
 ### Case Classes
+  - An ideal data class is a case class.
   - Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
+  - When you want to define some functionality related to a case class, Scala suggests companion object. 
+    - If a case class is a data holder, then a corresponding companion object is a service for this case class.
+	- Note that in order to define a companion object for a class you have to set the same names for them and declare them in the same file.
   
 What comes with case classes:
   - Constructor parameters become public “fields” (Scala-style, which means that they really just have an associated accessor/mutator method pair)
