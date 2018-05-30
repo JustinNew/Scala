@@ -155,6 +155,13 @@ object A extends B with C {
   
 ### Case Classes
   - Case classes are regular classes which export their constructor parameters and which provide a recursive decomposition mechanism via pattern matching.
+  
+What comes with case classes:
+  - Constructor parameters become public “fields” (Scala-style, which means that they really just have an associated accessor/mutator method pair)
+  - Methods toString(), equals() and hashCode() are defined based on the constructor fields
+  - A companion object containing:
+    - An apply() constructor based on the class constructor
+    - An extractor based on constructor fields
 
 ### pattern match
   - Whenever you write a pattern match, you need to make sure you have covered all of the possible cases.
