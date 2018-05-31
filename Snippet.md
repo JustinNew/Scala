@@ -70,6 +70,10 @@ A method defined in class java.lang.Object. Can be override when define a class 
 ```
   
 ### Option Example
+ - Scala Option[T] is a container for zero or one element of a given type. 
+ - An Option[T] can be either Some[T] or None object, which represents a missing value.
+
+In short, if you have a value of type A that may be absent, Scala uses an instance of Option[A] as its container. An Intance of **Option** is either an instance of case class **Some** when it is present or case object **None** when it is not. Since both **Some** and **None** are children of **Option**, your function signature should declare that the returned value is an **Option** of some type, e.g. **Option[A]** in the above example.
 
 ```scala
 def toInt(in: String): Option[Int] = {

@@ -181,6 +181,9 @@ More about case classes:
 ### pattern match
   - Whenever you write a pattern match, you need to make sure you have covered all of the possible cases.
   
+### Option
+  - Scala Option[ T ] is a container for zero or one element of a given type. An Option[T] can be either Some[T] or None object, which represents a missing value.
+
 ### self type
   - what is the difference between a self type and extending a trait, that is simple. If you say B extends A, then B is an A. When you use self-types, B requires an A.
 
